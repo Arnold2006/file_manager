@@ -1,0 +1,38 @@
+<h1>File Manager</h1>
+
+<form id="uploadForm" enctype="multipart/form-data">
+    <input type="file" name="file" required>
+    <button type="submit">Upload</button>
+</form>
+
+<h2>Your Files</h2>
+<ul id="fileList">
+    {foreach from=$files item=file}
+        <li>
+            {$file->fileName} - 
+            <a href="{url_for_route name='file_manager_download' params=['id' => $file->id]}">Download</a>
+        </li>
+    {/foreach}
+</ul>
+
+<script>
+    $('#uploadForm').submit(function(e) {
+        e.preventDefault();
+        var formData = new FormData(this);
+        $.ajax({
+            url: '{url_for_route name="file_manager_upload"}',
+            type: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function(response) {
+                response = JSON.parse(response);
+                if (response.success) {
+                    location.reload();
+                } else {
+                    alert('Upload failed');
+                }
+            }
+        });
+    });
+</script>

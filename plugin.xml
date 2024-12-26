@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin>
+    <name>File Manager</name>
+    <key>file_manager</key>
+    <description>Allows users to upload, list, and download files</description>
+    <author>Ole Rasmussen</author>
+    <authorEmail>ole@tera-sat.com</authorEmail>
+    <authorUrl>http://www.tera-sat.com</authorUrl>
+    <developerKey>169d51276f5c3f3001daa4047f50ee2b</developerKey>
+    <build>1</build>
+    <copyright>(C) 2024 Ole Rasmussen</copyright>
+    <license>OSCL</license>
+    <licenseUrl>http://www.oxwall.org/store/oscl</licenseUrl>
+</plugin>
